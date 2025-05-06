@@ -22,11 +22,11 @@ header {
 }
 
 .navbar {
-    flex: 5;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-start;
+    justify-content: center; /* Centre horizontalement les éléments */
+    align-items: center;     /* Aligne verticalement les éléments */
+    gap: 1rem;               /* Espacement entre les éléments */
+    flex-wrap: wrap;         /* Pour éviter que tout déborde sur un petit écran */
 }
   
 .navbar button {
