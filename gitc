@@ -1,0 +1,58 @@
+#!/bin/bash
+
+attend() {
+    read -p "" 
+}
+
+push() {
+	pull
+    echo "Message du commit"
+    read rep
+    git config --global user.email "victorien.denoyelle@epitech.eu"
+    git add -A
+    git commit -m "$rep"
+    git push
+    echo -e "Push effectué\n"
+}
+
+pull() {
+    git pull
+    echo -e "Pull effectué\n"
+}
+
+clone() {
+    echo "Répertoire à cloner"
+    read rep
+    git clone "$rep"
+    echo -e "Clone effectué\n"
+}
+
+tag() {
+    echo "Tag à créer :"
+    read rep
+
+    # Vérifie si le tag existe déjà
+    if git rev-parse "$rep" >/dev/null 2>&1; then
+        echo "⚠️  Le tag '$rep' existe déjà. Abandon."
+    else
+        safe_tag=$(echo "$rep" | tr ' +' '_')
+        git tag "$safe_tag"
+        git push origin "$rep"
+    fi
+}
+
+clear
+select choix in "push" "pull" "clone" "status" "tag" "quitter"
+do
+    case $REPLY in
+        1) push ;;
+        2) pull ;;
+        3) clone ;;
+        4) git status ;;
+        5) tag ;;
+        6) break ;;
+        *) echo "Mauvaise entrée" ;;
+    esac
+	attend
+	clear
+done

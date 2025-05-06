@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire d’abonnement</title>
+  <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+        <a href="./main.html"><img src="../src/Logo-FFVE.png" alt="Logo" class="logo"></a>
+    </div>
+    <nav class="navbar">
+      <button>Premier Bouton déroulant</button>
+      <button>Deuxième Bouton déroulant</button>
+      <button>Troisième Bouton déroulant</button>
+      <button>Quatrième Bouton déroulant</button>
+      <button>Cinquième Bouton déroulant</button>
+      <div class="auth-links">
+        <a href="#">LOGIN</a>
+        <a href="register.html">REGISTER</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Formulaire d’abonnement</h1>
+    <form>
+      <div class="form-row">
+        <input type="text" placeholder="Prénom">
+        <input type="text" placeholder="Nom">
+      </div>
+      <input type="email" placeholder="Mail">
+      <input type="tel" placeholder="Numéro">
+
+      <fieldset>
+        <legend>Adresse</legend>
+        <input type="text" placeholder="Numéro et rue">
+        <input type="text" placeholder="Ligne Additionnelle">
+        <div class="form-row">
+          <input type="text" placeholder="Ville">
+          <input type="text" placeholder="Région">
+        </div>
+        <div class="form-row">
+          <input type="text" placeholder="Code Postal">
+          <select>
+            <option>France</option>
+            <option>Belgique</option>
+            <option>Suisse</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="options">
+        <label><input type="radio" name="type" value="entreprise" id="type-entreprise"> Entreprise</label>
+        <label><input type="radio" name="type" value="prive" id="type-prive"> Privé</label>
+      </div>
+
+      <button type="submit" class="submit">Accepter formulaire</button>
+    </form>
+  </main>
+</body>
+<script src="../register.ts" defer></script>
+</html>
